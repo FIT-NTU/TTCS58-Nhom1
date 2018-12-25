@@ -67,6 +67,13 @@ void ThongKeKyTu(string s)
 	sum = n - dem;
 	cout << "So ky tu chu cai trong chuoi la: " << sum << endl;
 }
+void Menu()
+{
+	cout <<"Cac chuc nang cua chuong trinh:"<<endl;
+	cout <<"1: Luu chuoi vua nhap vao file input1.txt.";
+	cout <<"2: Xoa cac khoang trang du thua trong chuoi vua nhap.";
+	cout <<"3: "
+}
 int main()
 {
 	string s;
