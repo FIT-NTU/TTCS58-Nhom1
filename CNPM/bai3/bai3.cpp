@@ -32,15 +32,7 @@ void doc()
 		file>>a[i].ten;
 		file>>a[i].luong;
 	}
-/*	for(int i=1;i<=n;i++)
-	{
-		cout<<setw(10)<<a[i].manv;
-		cout<<setw(10)<<a[i].holot;
-		cout<<setw(10)<<a[i].ten;
-		cout<<setw(10)<<a[i].luong;
-		cout<<endl;
-	}
-*/
+
    
 }
 
