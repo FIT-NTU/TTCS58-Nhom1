@@ -4,7 +4,10 @@
 #include <iostream>
 char *pathin="input1.txt";
 char *pathout="output1.txt";
-
+char str[255];
+char str1[255];
+char str2[255];
+int kitu;
 using namespace std;
 void Nhap()
 {
@@ -15,7 +18,7 @@ void Nhap()
 		cout<<"khong tim thay file"<<endl;
 	else
 	{
-	char str[255];
+	
 	cout<<"nhap chuoi: ";
 	fflush(stdin);
 	gets(str);
@@ -27,14 +30,6 @@ void Nhap()
 void BoKhoangTrong()
 {
 	
-	char str[255];
-	FILE *file;
-	file = fopen(pathin,"r");
-	if (!file)
-		cout<<"khong tim thay file input "<<endl;
-	else
-	{
-	 fgets(str,255,file);
 		
 	//xoa khoang trang dau cau:
 	while(str[0]==' ')strcpy(&str[0],&str[1]);
@@ -50,46 +45,35 @@ void BoKhoangTrong()
 			
 	//xoa cuoi 
 	while(str[strlen(str)-1]==' ') strcpy(&str[strlen(str)-1],&str[strlen(str)]);
-	puts(str);
-	}
-	fclose(file);
-	file = fopen(pathout,"w");
-		if (!file)
-		cout<<"khong tim thay file output "<<endl;
-	else
-		{
-			fprintf(file,str);
-		}
-	fclose(file);
+	
+	
+	
+
+	for(int i=0;i<strlen(str);i++) str1[i]=str[i];
+	puts(str1);
 }
 
 void ChuanHoa()
 {
 
-	char str[255];
-	FILE *file;
-		file = fopen(pathout,"r+");
-		if (!file)
-		cout<<"khong tim thay file output "<<endl;
-	else
-		{
-			fgets(str,255,file);
+	
+	for(int i=0;i<strlen(str);i++) str[i]=str1[i];
+	
+
 			
 			//chuyen chuoi ve toan bo chu thuong
-			strlwr(str);
+		strlwr(str);
 			
 			//viet hoa chu dau cau
 			// ham toupper chuyen chu thuong thanh chu in
-			str[0]=toupper(str[0]);
+		str[0]=toupper(str[0]);
 			
 			//viet hoa chu con lai
-			for(int i=1;i<strlen(str);i++) if(str[i]==' ') str[i+1]=toupper(str[i+1]);
-			fprintf(file,"\n");
-			fprintf(file,str);
-			puts(str);
-			
-		}
-	fclose(file);
+		for(int i=1;i<strlen(str);i++) if(str[i]==' ') str[i+1]=toupper(str[i+1]);
+
+
+		for(int i=0;i<strlen(str);i++) str2[i]=str[i];
+		puts(str2);
 }
 
 
@@ -99,38 +83,33 @@ void ChuanHoa()
 
 void ThongKe()
 {
-	
-	char str[255];
-	FILE *file;
-		file = fopen(pathin,"r");
-		if (!file)
-		cout<<"khong tim thay file output "<<endl;
-	else
-		{
-			int hoa=0,thuong=0;
-			fgets(str,255,file);
-			for(int i=0;i<strlen(str);i++) if(str[i]>=65 && str[i]<=90) hoa=hoa+1;
-				else if(str[i]>=97 && str[i]<=122) thuong=thuong+1;
+	int count=0;
+			for(int i=0;i<strlen(str);i++) if(str[i]==' ') count=count+1;
+			kitu=strlen(str)-count;
+			cout<<"\nki tu:"<<kitu;
 			
-			cout<<"\nchu hoa: "<<hoa;
-			cout<<"\nchu thuong: "<<thuong;
-			file=fopen(pathout,"a");
+		
+
+}
+
+//ghi file
+void ghi()
+{
+		FILE *file;
+		file=fopen(pathout,"w");
 			if (!file)
 				cout<<"khong tim thay file output "<<endl;
 			else
 			{
-				fprintf(file,"\n so chu hoa cua chuoi ban dau: %d",hoa);
+				fprintf(file,str1);
 				fprintf(file,"\n");
-				fprintf(file,"so chu thuong cua chuoi ban dau: %d",thuong);
+				fprintf(file,str2);
+				fprintf(file,"\n so ki tu cua chuoi ban dau: %d",kitu);
+				
+				
 			}
 			fclose(file);
-					
-		}
-	fclose(file);
-
 }
-
-
 
 
 
@@ -147,6 +126,7 @@ void Menu()
 	cout<<"2. Bo khoang trang thua\n"; 
 	cout<<"3. Chuan hoa dang Proper\n"; //ki tu dau tien moi8 tu viet hoa
 	cout<<"4. Thong ke luong ki tu chu cai trong chuoi\n";
+	cout<<"5. Ghi tat ca vao file !!\n";
 	cout<<"9. Thoat !!!\n";
 	cout<<"==================================\n";
 }
@@ -183,7 +163,10 @@ void XuLyMenu()
 			cout<<"4. Thong ke luong ki tu chu cai trong chuoi\n";
 			ThongKe();
 			break;
-	
+		case 5:
+			ghi();
+			cout<<"da ghi vao file !!!";
+			break;
 		case 9:
 			cout<<"9. Thoat !!!\n\n\n";
 			cout<<"THANK YOU";

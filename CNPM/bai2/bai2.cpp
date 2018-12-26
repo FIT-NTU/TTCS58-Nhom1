@@ -90,62 +90,32 @@ void Nhanso(Node *dau,int x)
 	}
 }
 
-/*cong matran thua
-void Cong(Node *dau,Node *d,Node *begin)
+//cong matran thua
+/*void Cong(Node *dau,Node *begin)
 {
-	Node *k,*s,*p,*q;
-	k=dau;q=begin;p=d;
-	while(p!=NULL)
+	Node *p,*k,*q,*s;
+	p=dau;k=begin;
+	while(p!=NULL)	p=p->tiep;
+	while(k!=NULL)
 	{
-		while(q!=NULL)
-		{
-			if(p->cot==q->cot&&p->dong==q->dong) 
-				{
-					k=new Node;
-					k->gtri=p->gtri+q->gtri;
-					k->cot=p->cot;
-					k->dong=p->dong;
-					k->tiep=NULL;
-					if(dau==NULL) dau=p;
-					else s->tiep=p;
-					s=p;
-				
-				}
-			q=q->tiep;
-		}
-		q=dau;
+		p=k;
 		p=p->tiep;
+		k=k->tiep;
 	}
-	
-	
 	p=dau;
 	while(p!=NULL)
 	{
-		while(q!=NULL)
+		q=p;	
+		while(p->tiep!=NULL)
 		{
-			if(p->cot!=q->cot||p->dong!=q->dong) 
-				{
-					k=new Node;
-					k=p;
-					k->tiep=NULL;
-					if(dau==NULL) dau=p;
-					else s->tiep=p;
-					s=p;
-					k=new Node;
-					k=q;
-					k->tiep=NULL;
-					if(dau==NULL) dau=p;
-					else s->tiep=p;
-					s=p;
-				
-				}
-			q=q->tiep;
+			p=p->tiep;
+			if(q->dong==p->dong && q->cot==p->cot) xoaP() 
 		}
-		q=dau;
-		p=p->tiep;
-	}			
-}
-*/
+	}
+	
+	
+}*/
+
 int main()
 {
 	Node *a;
