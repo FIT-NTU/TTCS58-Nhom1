@@ -12,6 +12,7 @@ struct Employee {
     string lastName; // ho
     int salary;
 } empF, empS; // employee finded, employee have max of salary
+
 class empList {
     private:
         int n; //numbers of employee;
@@ -27,6 +28,7 @@ empList emps;
 int mo; // menu option
 char rtnMenu; // return to menu
 
+void readInputFile();
 void showMenu();
 void menuOption();
 void enterEmps();
@@ -58,12 +60,10 @@ void empList::enterEmpList() {
 }
 void empList::showEmpList() {
     if(n) {
+        cout << "STT\t" << "Emp code\t" << "Ho ten\t\t\t" << "Salary" << endl;
         for(int i = 0; i < n; i++) {
-            cout << "======================" << endl;
-            cout << "Employee code: " << ds[i].empCode;
-            cout << "\nFirst name: " << ds[i].firstName << endl;
-            cout << "\nLast name: " << ds[i].lastName << endl;
-            cout << "\nSalary: " << ds[i].salary << endl;
+            cout << i + 1 << "\t" << ds[i].empCode << "\t\t";
+            cout << ds[i].lastName << " " << ds[i].firstName << "\t\t" << ds[i].salary << endl;
         }
     } else {
         cout << "======================" << endl;
@@ -219,15 +219,16 @@ void menuOption() {
     }
 }
 void writeToInputFile(empList emps) {
-    ofstream myfile;
-    myfile.open("input3.txt");
+    fstream myfile;
+    myfile.open("input3.txt", ios::app);
     int len = emps.ds.size();
-    for(int i = 0; i < len; i++) {
-        myfile << "======================" << endl;
-        myfile << "Emp code: " << emps.ds[i].empCode << endl;
-        myfile << "First name: " << emps.ds[i].firstName << endl;
-        myfile << "Last name: " << emps.ds[i].lastName << endl;
-        myfile << "Salary: " << emps.ds[i].salary << endl;
+    if(len) {
+        for(int i = 0; i < len; i++) {
+            myfile << ds[i].empCode << endl;
+            myfile << ds[i].firstName << endl;
+            myfile << ds[i].lastName << endl;
+            myfile << ds[i].salary << endl;
+        }
     }
     myfile.close();
     cout << "\nWrited to input1.txt\n\n";
