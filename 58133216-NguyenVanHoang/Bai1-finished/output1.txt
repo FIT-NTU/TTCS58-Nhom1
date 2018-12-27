@@ -6,3 +6,11 @@ Have 9 different characters
 Trim string: nguyen van hoang23h
 Proper string: Nguyen Van Hoang23h
 Have 9 different characters
+======================
+Trim string: nguyen van hoang
+Proper string: Nguyen Van Hoang
+Have 9 different characters
+======================
+Trim string: nguyen van hoang
+Proper string:   Nguyen  Van   Hoang   
+Have 14 different characters

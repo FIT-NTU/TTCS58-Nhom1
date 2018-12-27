@@ -9,7 +9,7 @@ using namespace std;
 struct Employee {
     int empCode;
     string firstName; // ten
-    string lastName; // holot
+    string lastName; // ho
     int salary;
 } empF, empS; // employee finded, employee have max of salary
 class empList {
@@ -106,6 +106,12 @@ void empList::sort() {
                 Employee tmp = ds[i];
                 ds[i] = ds[j];
                 ds[j] = tmp;
+            } else if(ds[i].firstName.compare(ds[j].firstName) == 0) {
+                if(ds[i].lastName.compare(ds[j].lastName) > 0) {
+                    Employee tmp = ds[i];
+                    ds[i] = ds[j];
+                    ds[j] = tmp;
+                }
             }
         }
 }

@@ -14,8 +14,8 @@ int count; // count different characters
 
 void showMenu();
 void menuOption();
-void writeToInputFile(string data);
-void writeToOutputFile(string t = "", string p = "", int c = 0);
+void writeToInputFile(string s);
+void writeToOutputFile();
 void enterString();
 string trim(string s);
 string capitalize(string s);
@@ -123,10 +123,10 @@ void menuOption() {
                 t = trim(s);
                 cout << "[] to mark the string, not in the string" << endl;
                 cout << "Trim string :> [" << t << "]" << endl;
-                p = capitalize(t);
+                p = capitalize(s);
                 cout << "Proper string :> " << p << endl;
                 count = statistical(s);
-                writeToOutputFile(t, p, count);
+                writeToOutputFile();
                 if(returnToMenu()) {
                     system("cls");
                     showMenu();
@@ -162,14 +162,14 @@ void writeToInputFile(string s) {
     cout << "\nWrited to input1.txt\n\n";
 }
 
-void writeToOutputFile(string t, string p, int c) {
+void writeToOutputFile() {
     fstream myfile;
     myfile.open("output1.txt", ios::app);
 
     myfile << "======================" << endl;
     myfile << "Trim string: " << t << endl;
     myfile << "Proper string: " << p << endl;
-    myfile << "Have " << c << " different characters" << endl;
+    myfile << "Have " << count << " different characters" << endl;
 
     myfile.close();
     cout << "\nSaved to output1.txt\n\n";
@@ -232,40 +232,19 @@ string capitalize(string s) {
 int statistical(string s) {
     
     int n = s.length();
-    char char_arr[n + 1];
-
-    strcpy(char_arr, s.c_str());
-
-    static int count1[52] = {0};
+    count = 0;
 
     for(int i = 0; i < n; i++) {
-        if(isalpha(char_arr[i])) {
-            if(char_arr[i] >= 'a') {    
-                count1[char_arr[i] - 'a']++;
-            } else {
-                count1[char_arr[i] - 'A' + 26]++;
-            }
+        if(isalpha(s[i])) {
+            count++;
         }
     }
-
-    // for(int i = 0; i < 26; i++) {
-    //     if(count[i]) {
-    //         cout << char(i + 'a') << ": " << count[i] << " times" << endl;
-    //     }
-    // }
-    // for(int i = 26; i < 52; i++) {
-    //     if(count[i]) {
-    //         cout << char(i + 'A' - 26) << ": " << count[i] << " times" << endl;
-    //     }
-    // }
-
-    int count2 = 0;
-    for(int i = 0; i < 52; i++) {
-        if(count1[i]) count2++;
+    if(count) {
+        cout << "Have " << count << " characters" << endl;
+    } else {
+        cout << "Dont have characters" << endl;
     }
-    cout << "Have " << count2 << " different characters" << endl;
-
-    return count2;
+    return count;
 }
 bool returnToMenu() {
     cout << "Enter H to return to the menu:> "; cin >> rtnmenu;
