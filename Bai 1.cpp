@@ -39,7 +39,7 @@ void xoa()
 i = 0;
 if(ten[i]==' ') ten.erase(ten.begin()+i);
 //xoa ki tu cuoi cung neu la khoang trang
-i=n;
+i=n-1;
 if(ten[i]==' ') ten.erase(ten.begin()+i);
 }
 void viethoa()
@@ -79,7 +79,7 @@ void thongke()
 	int dem=0;
 	for(int i=0;i<a;i++)
 	{
-		if(ten1[i]!=' ') dem++;
+		if( (int (char(ten1[i]))>=97)&&(int(char(ten1[i]))<=122) ) dem++;
 	}
 	s<<dem<<endl;
 }
@@ -91,6 +91,7 @@ int main()
 	cout<<"Chon 2. De xoa khoang trang"<<endl;
 	cout<<"Chon 3. De viet hoa chu cai dau tien"<<endl;
 	cout<<"Chon 4. De thong ke ky tu trong chuoi"<<endl;
+	cout<<"Chon 0. De ket thuc"<<endl;
 	cout<<"Nhap so : ";cin>>k;
 	while(k==1||k==2||k==3||k==4)
 	{
@@ -113,7 +114,13 @@ int main()
 		{
 			thongke();
 		}
-		cout<<"Ban con muon lam cong viec gi khac hay nhap so neu khong thi hay nhap so 0 de hoan thanh cong viec\nNhap so : ";cin>>k;
+	cout<<"Vui long chon so de chon cong viec thuc hien "<<endl;
+	cout<<"Chon 1. De nhap chuoi"<<endl;
+	cout<<"Chon 2. De xoa khoang trang"<<endl;
+	cout<<"Chon 3. De viet hoa chu cai dau tien"<<endl;
+	cout<<"Chon 4. De thong ke ky tu trong chuoi"<<endl;
+	cout<<"Chon 0. De ket thuc"<<endl;
+	cout<<"Nhap so : ";cin>>k;
 	}
 
 	
