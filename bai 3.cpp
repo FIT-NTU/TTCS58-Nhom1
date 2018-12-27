@@ -52,6 +52,7 @@ void xuatvaofileO(nhanvien nv[], int n)
 void tim(nhanvien nv[], int n)
 {
 	int x;
+	int dem=0;
 	cout<<"Vui long nhap ma de tim nhan vien : ";cin>>x;
 	for(int i=0;i<n;i++)
 	{
@@ -59,8 +60,10 @@ void tim(nhanvien nv[], int n)
 		{
 			s<<"ma nhan vien"<<"\t"<<"ho lot"<<"\t\t"<<"ten"<<"\t"<<"tien luong"<<endl;
 			s<<nv[i].manv<<"\t\t"<<nv[i].holot<<"\t\t"<<nv[i].ten<<"\t\t"<<nv[i].tienluong<<endl;
+			dem++;
 		}
 	}
+	if(dem==0) s<<"khong tim thay"<<endl;
 	s<<"---------------------------------------------------------------"<<endl;
 	
 }
@@ -150,7 +153,13 @@ int main()
 			xuatvaofileO(nv,n);
 			s<<"---------------------------------------------------------------"<<endl;
 		}
-		cout<<"Ban con muon lam cong viec gi khac hay nhap so neu khong thi hay nhap so 0 de hoan thanh cong viec\nNhap so : ";cin>>k;
+	cout<<"------MENU------"<<endl;
+	cout<<"Vui long chon so de chon cong viec thuc hien "<<endl;
+	cout<<"Chon 1. De nhap nhan vien va xuat nhan vien vao file input3.txt"<<endl;
+	cout<<"Chon 2. De nhap ma va tim nhan vien"<<endl;
+	cout<<"Chon 3. De biet duoc ho ten nhan vien nao co luong cao nhat va thap nhat"<<endl;
+	cout<<"Chon 4. De sap xep ten nhan vien tang dan theo chuoi"<<endl;
+	cout<<"Nhap so : ";cin>>k;
 	}
 	system("pause");
 	
