@@ -96,6 +96,7 @@ void sapxep()
 						b=a[i];
 						a[i]=a[j];
 						a[j]=b;
+					
 					}
 			}
 			 else if(a[i].ten.compare(a[j].ten)>0)
@@ -103,6 +104,7 @@ void sapxep()
 						b=a[i];
 						a[i]=a[j];
 						a[j]=b;
+					
 					}
 				
 		}
