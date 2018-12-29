@@ -26,7 +26,7 @@ bool checkEmpty(){
 	return false;
 }
 
-void nhapVaoFileInput(){
+void nhapVaoFile(){
 	vector< nv > a;
 	int n;
 	cout<<"Nhap so luong nhan vien (<=50 nhan vien): "; cin>>n;
@@ -59,7 +59,7 @@ nv createNV(long int ma, string hl, string tn, long int lg){
 	return res;
 }
 
-void docFileInput(vector< nv > &res){
+void docFile(vector< nv > &res){
 	res.resize(0);
 	ifstream infile;
 	infile.open("input3.txt");
@@ -110,7 +110,7 @@ void truyXuatTheoMaNhanVien(vector< nv > a){
 	getch();
 }
 
-void hoTenCuaNhanVienCoLuongCaoNhatVaThapNhat(vector< nv > a){
+void TenNVLuongCaoNhatVaThapNhat(vector< nv > a){
 	ofstream outfile;
 	outfile.open("output3.txt", ios::app);
 	nv maxLuong=a[0], minLuong=a[0];
@@ -131,13 +131,13 @@ void hoTenCuaNhanVienCoLuongCaoNhatVaThapNhat(vector< nv > a){
 	getch();
 }
 
-bool soSanhTen(nv nv1, nv nv2){
+bool SSanhTen(nv nv1, nv nv2){
 	if (nv1.ten[0]<nv2.ten[0]) return true;
 	else if (nv1.ten[0]==nv2.ten[0]) return (nv1.holot[0]<nv2.holot[0]);
 }
 
-void sapXepTheoTen(vector< nv > &a){
-	sort(a.begin(), a.end(), soSanhTen); 
+void SXepTen(vector< nv > &a){
+	sort(a.begin(), a.end(), SSanhTen); 
 }
 
 void xuatRaFileDanhSachTenNhanVienSauSapXep(vector< nv > a){
@@ -174,7 +174,7 @@ main(){
 	while (true)
 	{
 		int control;
-		docFileInput(NhanVien);
+		docFile(NhanVien);
 		system("cls");
 		cout<<"0. Ket thuc chuong trinh.\n";
 		cout<<"1. Nhap them nhan vien vao danh sach nhan vien. (luu vao file input3.txt)\n";
@@ -191,12 +191,12 @@ main(){
 		}
 		system("cls");
 		if (control==0) break;
-		else if (control==1) nhapVaoFileInput();
+		else if (control==1) nhapVaoFile();
 		else if (control==2) truyXuatTheoMaNhanVien(NhanVien);
-		else if (control==3) hoTenCuaNhanVienCoLuongCaoNhatVaThapNhat(NhanVien);
+		else if (control==3) TenNVLuongCaoNhatVaThapNhat(NhanVien);
 		else if (control==4)
 		{
-			sapXepTheoTen(NhanVien);
+			SXepTen(NhanVien);
 			xuatRaFileDanhSachTenNhanVienSauSapXep(NhanVien);
 			cout<<"Da xuat danh sach nhan vien ra file outpu3.txt\n";
 			cout<<"Danh sach nhan vien sap xep theo ten:\n\n";
