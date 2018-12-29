@@ -1,0 +1,6 @@
+STT	Ma nhan vien	Ho		Ten	Luong nhan vien
+1	1		nguyen		hoang		123
+2	2		nguyen		hai		456
+3	3		le		khang		789
+4	4		ba		hai		123
+5	5		ho		khang		789
