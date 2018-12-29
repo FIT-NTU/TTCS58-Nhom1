@@ -5,42 +5,31 @@
 #include<string>
 #include<time.h>
 using namespace std;
-
-string s;
-void Xoakytu(int &n, int vitrixoa)
-{//xoa 1 ky tu tai vi tri xoa
-	for (int i = vitrixoa; i < n; i++)
-	{
-		s[i] = s[i + 1];
-	}
-	n--;
-}
-string XoaKhoangTrang()
+string XoaKhoangTrang(string &s)
 {
 	int i;
-	int n = s.length();
 	//xoa cac ky tu trang nam o dau chuoi
 	while (s[0]==' ')
 	{
-		Xoakytu(n, 0);
+		s.erase(s.begin()+0);
 	}
 	// Xoa cac ky tu trang o cuoi chuoi
-	while (s[n - 1]==' ' &&s[n]=='\0')
+	while (s[s.length() - 1]==' ')
 	{
-		Xoakytu(n, n - 1);
+		s.erase(s.begin() + s.length() - 1);
 	}
 	//Xoa cac ky tu trang nam o giua chuoi
-	for (i = 0; i < n; i++)
+	for (i = 0; i < s.length(); i++)
 	{
 		while (s[i] == ' ' && s[i + 1] == ' ')
 		{
-			Xoakytu(n, i);
+			s.erase(s.begin()+i);
 			i--;
 		}
 	}
 	return s;
 }
-string ChuanHoaProper()
+string ChuanHoaProper(string &s)
 {
 	//neu ky tu dau tien chua viet hoa thi chuyen no thanh ky tu viet hoa
 	if (s[0] > 96)
@@ -70,7 +59,7 @@ string ChuanHoaProper()
 	}
 	return s;
 }
-int ThongKeKyTu()
+int ThongKeKyTu(string &s)
 {
 	int dem = 0;
 	//duyet tu dau den cuoi chuoi. neu khong phai khoang trang thi dem +1
@@ -81,15 +70,15 @@ int ThongKeKyTu()
 	}
 	return dem;
 }
-void GhiKetQuaVaoFile()
+void GhiKetQuaVaoFile(string &s)
 {
 	//ghi ket qua thuc hien cac ham vao file
-	ofstream f("D://TTCS-Nhom1/output3.txt");
-	f <<"/"<< ChuanHoaProper()<<"/"<<endl;
-	f << "/" << XoaKhoangTrang() << "/" << endl;
-	f << "So ky tu: " << ThongKeKyTu();
+	ofstream f("ouput1.txt");
+	f << "Chuoi sau khi xoa cac khoang trang:/" << XoaKhoangTrang(s) << "/" << endl;
+	f <<"Chuoi sau khi chuan hoa:/"<< ChuanHoaProper(s)<<"/"<<endl;
+	f << "So ky tu: " << ThongKeKyTu(s);
 }
-void GhiChuoiNhapVaoFile()
+void GhiChuoiNhapVaoFile(string &s)
 {
 	//ghi chuoi vua nhap vaofile
 	ofstream f("input1.txt");
@@ -118,10 +107,11 @@ void Author()
 {
 	cout << "Thuc tap co so tuan 1, bai 1." << endl;
 	cout << "Sinh vien thuc hien: Nguyen Tuan Anh." << endl;
-	cout << "Giang vien huong dan: Bui Thi Hong Mih" << endl;
+	cout << "Giang vien huong dan: Bui Thi Hong Minh." << endl;
 }
-void XuLyMenu()
+void XuLyMenu(string &s,string &temp)
 {
+
 	int chucnang = ChonChucNang();
 	switch (chucnang)
 	{
@@ -129,32 +119,32 @@ void XuLyMenu()
 	{
 		cout<< "-----------oOo-----------" << endl;
 		cout << "Chuoi vua nhap da duoc ghi vao file input.txt" << endl;
-		GhiChuoiNhapVaoFile();
+		GhiChuoiNhapVaoFile(temp);
 		break;
 	}
 	case 2:
 	{
 		cout<< "-----------oOo-----------" << endl;
-		cout << "Chuoi sau khi xoa cac khoang trong du thua: " << XoaKhoangTrang() << endl;
+		cout << "Chuoi sau khi xoa cac khoang trong du thua: " << XoaKhoangTrang(s) << endl;
 		break;
 	}
 	case 3:
 	{
 		cout<< "-----------oOo-----------" << endl;
-		cout << "Chuoi sau khi chuan hoa proper: " << ChuanHoaProper() << endl;
+		cout << "Chuoi sau khi chuan hoa proper: " << ChuanHoaProper(s) << endl;
 		break;
 	}
 	case 4:
 	{
 		cout<< "-----------oOo-----------" << endl;
-		cout << "So ky tu chu cai trong chuoi la: " << ThongKeKyTu() << endl;
+		cout << "So ky tu chu cai trong chuoi la: " << ThongKeKyTu(s) << endl;
 		break;
 	}
 	case 5:
 	{
 		cout<< "-----------oOo-----------" << endl;
 		cout << "Tat ca ket qua da duoc ghi vao file output1.txt." << endl;
-		GhiKetQuaVaoFile();
+		GhiKetQuaVaoFile(temp);
 		break;
 	}
 	case 6:
@@ -170,15 +160,17 @@ void XuLyMenu()
 }
 int main()
 {
+	string s,temp;
 	Author();
 	cout << "-----------oOo-----------" << endl;
 	cout << "Nhap vao 1 chuoi: ";	
 	getline(cin, s);
+	temp = s;
 	cout<< "-----------oOo-----------" << endl;
 	Menu();
 	while(1)
 	{
-		XuLyMenu();
+		XuLyMenu(s,temp);
 	}
 	system("pause");
 }
