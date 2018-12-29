@@ -73,7 +73,7 @@ int ThongKeKyTu(string &s)
 void GhiKetQuaVaoFile(string &s)
 {
 	//ghi ket qua thuc hien cac ham vao file
-	ofstream f("ouput1.txt");
+	ofstream f("output1.txt");
 	f << "Chuoi sau khi xoa cac khoang trang:/" << XoaKhoangTrang(s) << "/" << endl;
 	f <<"Chuoi sau khi chuan hoa:/"<< ChuanHoaProper(s)<<"/"<<endl;
 	f << "So ky tu: " << ThongKeKyTu(s);
