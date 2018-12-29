@@ -50,7 +50,7 @@ void GhiKetQuaVaoFile()
 	//ghi ket qua thuc hien cac ham vao file
 	ofstream f("D://TT Co so/Bo de 1/output1.txt");
 	f <<"Xoa khoang trang: "<<XoaKhoangTrang()<<endl;
-	f <<"Chuan hoa proper: "<<ChuanHoa<< endl;
+	f <<"Chuan hoa proper: "<<ChuanHoa()<< endl;
 	f << "So ky tu: " << DemKiTu();
 }
 void Menu()
@@ -67,7 +67,7 @@ void Menu()
 }
 int ChucNang()
 {	int n;
-	cout<<"Moi ban chon chu nang: "<<endl;
+	cout<<"Moi ban chon chuc nang: "<<endl;
 	cin>>n;
 	if (n > 0 && n < 7) return n;
 	else return ChucNang();
@@ -83,7 +83,7 @@ void XuLyMenu(){
 			break;
 		case 2:
 			cout<<"2. Xoa khoang tranng: \n"; 
-			XoaKhoangTrang();
+			cout<<"Chuoi sau khi xoa khoang trang la: ";XoaKhoangTrang();
 			break;
 		case 3:
 			cout<<"3. Chuan hoa chuoi: \n";
@@ -91,11 +91,12 @@ void XuLyMenu(){
 			break;
 		case 4:
 			cout<<"4. Dem ki tu: \n";
-			DemKiTu();
+			cout<<"so ki tu co trong chuoi la: "<<DemKiTu()<<endl;
+			
 			break;
 		case 5:
 			GhiKetQuaVaoFile();
-			cout<<"5. Ghi lai het vao file ";
+			cout<<"5. Ghi lai het vao file \n";
 			break;
 		case 6:
 			cout<<"6. ket thuc menu: ";
@@ -105,6 +106,8 @@ void XuLyMenu(){
 }
 
 int main(){
+	cout<<"Nhap vao 1 chuoi: ";
+	gets(s);
 	Menu();
 	while(1)
 	{
