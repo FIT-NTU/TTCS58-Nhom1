@@ -60,11 +60,13 @@ int main()
 		{
 			chuoi0[i]=chuoi[i];
 		}
+	
+	
 	//tao file va ghi tat ca vao file
 	ofstream input1 ("input1.txt");
 	input1<<chuoi;puts(chuoi);
 	input1.close();
-	while (1)
+	while (2)
 	{
 	cout << "-------------MENU-------------" << endl;
 	cout << "\n1. Xoa khoang trang thua" << endl;
@@ -84,6 +86,7 @@ int main()
 	
 	else if(luachon == 1) //xoa khoang trang thua
 		{
+			system("cls");//xoa mang hinh
 			xoakt(chuoi);
 			cout << "KQ sau khi xoa khoang trang thua:" ;
 			puts(chuoi);
@@ -95,10 +98,11 @@ int main()
 		
 	else if (luachon == 2) //chuan hoa
 		{
+			system("cls");//xoa mang hinh
 			chuanhoa(chuoi);
 			cout<<"Chuan hoa dang Proper:";
 			puts(chuoi);
-				for(int i = 0; i< strlen(chuoi) - 1; i++)
+			for(int i = 0; i< strlen(chuoi) - 1; i++)
 		{
 			chuoi2[i]=chuoi[i];
 		}
@@ -106,7 +110,7 @@ int main()
 		
 	else if (luachon == 3) //thong ke
 		{	
-				
+			system("cls");//xoa mang hinh
 			thongke(chuoi0);
 			cout<<"\nChu hoa "<<hoa;
 			cout<<"\nChu thuong "<<thuong<<endl;
@@ -115,10 +119,12 @@ int main()
 		}
 	else if (luachon == 4) //ghi tat ca vao file
 		{
+			system("cls");//xoa mang hinh
 			ofstream output1 ("output1.txt");
 			output1<<chuoi1<<endl;
 			output1<<chuoi2<<endl;
-			output1<<"Chu hoa "<<hoa<<"\t Chu thuong "<<thuong;
+			output1<<"Chu hoa "<<hoa<<endl;
+			output1<<"Chu thuong "<<thuong<<endl;
 			input1.close();
 			cout<<"Da ghi vao file "<<endl;
 		}
