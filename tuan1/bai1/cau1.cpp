@@ -1,11 +1,10 @@
 #include<iostream>
 #include<string.h>
 #include<fstream>
+
 using namespace std;
 int n;
 string str;
-char *chuoi;
-
 void nhap()
 {   
 	fstream f,k;
@@ -22,54 +21,48 @@ void nhap()
 string xoatrang()
 {
 	//xoa dau
+	string temp =str;
 	
-	while (str[0] == ' ')
+	while (temp[0] == ' ')
 	{
-		str.erase(str.begin() + 0); 
+		temp.erase(temp.begin() + 0); 
 	}
 	//xoa cuoi
-	while (str[str.length() - 1] == ' ')
+	while (temp[temp.length() - 1] == ' ')
 	{
-		str.erase(str.begin() + str.length() - 1); 
+		temp.erase(temp.begin() + temp.length() - 1); 
 	}
 	// xoa ki tu giua
-	for (int i = 0; i < str.length(); i++)
+	for (int i = 0; i < temp.length(); i++)
 	{
 		
-		if (str[i] == ' ' && str[i + 1] == ' ')
+		if (temp[i] == ' ' && temp[i + 1] == ' ')
 		{
-			str.erase(str.begin() + i);
+			temp.erase(temp.begin() + i);
 			i--;
 		}
 	}
 	
-	return str;
+	return temp;
 	
 }
 string in_hoa()
 {	
-	//chuyen toan bo chuoi thanh thuong
-	strlwr((char *)str.c_str());
-	// ghi hoa moi ki tu sau dau cach
-	if (str[0] != ' ')
+	string temp=str;
+	//chuyen ki tu thuong
+	for(int i=0; i<=temp.length();i++)
 	{
-		if (str[0] >= 97 && str[0] <= 122)
-		{
-			str[0] -= 32;
-		}	
+		if(temp[i]>=65 && temp[i]<=90)
+			temp[i]+=32;
 	}
-	for (int i = 0; i < str.length() - 1; i++)
+	temp[0]-=32;
+	//in hoa ki tu dau 
+	for(int i=1; i<temp.length();i++)
 	{
-		if (str[i] == ' ' && str[i + 1] != ' ')
-		{
-			if (str[i + 1] >= 97 && str[i + 1] <= 122)
-			{
-				
-				str[i + 1] -= 32; 
-			}
-		}
+		if(temp[i]==' ' && temp[i+1]>=97 && temp[i+1]<=122)
+			temp[i+1]-=32;
 	}
-	return str;
+	return temp;
 }
 int dem()
 {	
@@ -83,6 +76,7 @@ int dem()
 }
 void ghi_kq()
 {
+
 	fstream f;
 	f.open("D:\\ouput1.txt",ios::app);
 	f<<"chuoi sau khi xoa khoang trang:"<<xoatrang()<<endl;
@@ -102,7 +96,7 @@ void menu()
 
 void chon()
 {	
-
+	
 	cout<<"----------------"<<"chon cac muc trong menu phia tren"<<"-----------"<<endl;
 	cin>>n;
 	switch(n)
@@ -112,23 +106,23 @@ void chon()
 			menu();
 			chon();
 			break;
-		case 2: 
+		case 2:system("cls");  
 			cout<<"chuoi sau khi xoa khoang trang: "<<xoatrang()<<endl;
 			menu();
 			chon();
 			break;
-		case 3 :
+		case 3 :system("cls"); 
 			cout<<"chuoi sau khi in hoa: "<<in_hoa()<<endl;
 			menu();
 			chon();
 			break;
-		case 4:
+		case 4:system("cls"); 
 			cout<<"so luong ki tu: "<<dem()<<endl;
 			menu();
 			chon();
 			break;
-		case 5:
-		
+		case 5:system("cls"); 
+	
 			ghi_kq();
 			cout<<"--da ghi ket qua vao file--"<<endl;
 			menu();
@@ -139,7 +133,7 @@ void chon()
 			menu();
 			cout<<endl;
 			chon();	
-					
+							
 	}
 		
 }
