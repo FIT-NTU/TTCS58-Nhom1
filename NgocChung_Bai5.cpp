@@ -12,7 +12,7 @@ int main()
     char a =' '; char b= ' '; char c= ' '; char d = ' '; char e = ' '; char f= ' '; char g= ' '; char h = ' '; char i= ' ';
 
 
-    //INTRODUCTION - cin player's names
+    //Nhap ten cua nguoi choi
     START:
     cout << "3x3 - 2 PLAYERS - TIC TAC TOE" << endl;
     cout << endl;
@@ -24,7 +24,8 @@ int main()
     cout << "Nhap ten nguoi choi 2: " << endl;
     cin >> plr2;
     cout << endl;
-    //GAMEPLAY
+    
+	//GIAO DIEN GAME TIC TAC TOE 
 	
     cout << " ___________________" << endl;
     cout << " | (7) | (8) | (9) |" << endl;
@@ -35,6 +36,8 @@ int main()
     cout << " |_____|_____|_____|" << endl;
     cout << endl;
     cout << endl;
+    
+    //NHAP SO TU 1-9 TU BAN PHIM DE CHOI GAME
     for ( int k = 1; k < 10 ; k ++) {
         if ( k % 2 == 0) {
             cout << ""<<plr1 << endl;
@@ -80,8 +83,10 @@ int main()
                     cout << "ERROR: Chon so trong pham vi <3" << endl;
                     break;
         }
-        system("cls");//xoa mang hinh
-
+       
+	    system("cls");//xoa mang hinh
+	    
+		//XUAT RA MAN HINH
         cout << " ___________________" << endl;
         cout << " |  "<<a<<"  |  "<<b<<"  |  "<<c<<"  |" << endl;
         cout << " |_____|_____|_____|" << endl;
@@ -109,6 +114,7 @@ int main()
     }
     cout << "2 NGUOI CHOI HOA" << endl;
 
+	//THONG BAO CHO NGUOI CHOI
     QUESTION:
         cout << " Ban muon choi lai <y/n>" << endl;
         cin >> choice2;
