@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<conio.h>
-
 FILE *x;
 FILE *y;
 int n;
