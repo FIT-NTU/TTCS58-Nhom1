@@ -14,11 +14,28 @@ void docfile()
 	}
 	f.close();
 }
-void luu() 
+void quay_lui(int sum,int x) 
 {
-	for (int i =0;i<n;i++) 
+	for (int i=x;i<n;i++) 
 	{
-		kq[so_kq][i]=tam[i];
+		if ((sum + a[i])<=p) 
+		{
+			sum =sum+a[i];
+			tam[i]=1;
+			if (sum==p) 
+			{
+				for (int i =0;i<n;i++) 
+				{
+					kq[so_kq][i]=tam[i];
+				}
+				so_kq =so_kq+1;
+			}
+			else {
+				quay_lui(sum,i+1);
+			}
+				sum =sum-a[i];
+				tam[i] = 0;
+		}
 	}
 }
 void xuat()
@@ -30,27 +47,6 @@ void xuat()
 			cout<<kq[i][j]<<" ";
 		}
 			cout<<endl;
-	}
-}
-void quay_lui(int sum,int x) 
-{
-	for (int i=x;i<n;i++) 
-	{
-		if ((sum + a[i])<=p) 
-		{
-			sum =sum+a[i];
-			tam[i]=1;
-			if (sum==p) 
-			{
-				luu();
-				so_kq =so_kq+1;
-			}
-			else {
-				quay_lui(sum,i+1);
-			}
-				sum =sum-a[i];
-				tam[i] = 0;
-		}
 	}
 }
 // ghi ket qua vao file
