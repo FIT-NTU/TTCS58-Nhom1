@@ -2,6 +2,23 @@
 #include<fstream>
 #include<string>
 #include<string.h>
+#include"console.cpp"
+#include"console.h"
+#include<ctime>
+#include <cstdlib>
+#define dau 30
+#define cuoi 5
+#define MAX 6
+typedef char menu[100];
+menu submenu[6] =
+{
+	"1: Kiem tra so luong nhan vien trong file.",
+	"2: Tim kiem nhan vien theo ma nhan vien.",
+	"3: Danh sach ho ten nhan vien co luong cao nhat va thap nhat.",
+	"4: Danh sach nhan vien sap xep theo ten.",
+	"5: Ghi tat ca ket qua thuc hien duoc vao file.",
+	"6: Thoat."
+};
 using namespace std;
 struct NhanVien
 {
@@ -10,6 +27,20 @@ struct NhanVien
 	string Ten;
 	int Tienluong;
 };
+void Author()
+{
+	TextColor(4);
+	gotoXY(30, 0);
+	cout << "__________________________________________" << endl;
+	gotoXY(30, 1);
+	cout << "|     Thuc tap co so tuan 1, bai 3.      |" << endl;
+	gotoXY(30, 2);
+	cout << "|Sinh vien thuc hien: Nguyen Tuan Anh.   |" << endl;
+	gotoXY(30, 3);
+	cout << "|Giang vien huong dan: Bui Chi Thanh.    |" << endl;
+	gotoXY(30, 4);
+	cout << "------------------------------------------" << endl;
+}
 void Nhap(NhanVien &NV)
 {
 	cout << "Nhap ma nhan vien: "; cin >> NV.MaNV;
@@ -19,9 +50,16 @@ void Nhap(NhanVien &NV)
 	cout << "Nhap ten nhan vien: "; getline(cin, NV.Ten);
 	cout << "Nhap tien luong nhan vien: "; cin >> NV.Tienluong;
 }
-void XuatNhanVien(NhanVien &NV)
+void XuatNhanVien(NhanVien &NV, int x, int y)
 {
-	cout <<NV.MaNV<<"\t"<<NV.Holot<<"\t"<<NV.Ten<<"\t"<<NV.Tienluong<<endl;
+	gotoXY(x + 1, y);
+	cout << NV.MaNV;
+	gotoXY(x + 17, y);
+	cout << NV.Holot;
+	gotoXY(x + 33, y);
+	cout << NV.Ten;
+	gotoXY(x + 49, y);
+	cout << NV.Tienluong << endl;
 }
 void NhapDSNhanVien(int &n, NhanVien NV[])
 {
@@ -42,8 +80,8 @@ void Docfile(ifstream &f, NhanVien &NV)
 }
 void Ghifile(ofstream &f, NhanVien &NV)
 {
-	f<<"________________________________________________________________________________"<<endl;
-	f << "|"<<NV.MaNV <<"\t|"<< NV.Holot << "\t|"<< NV.Ten << "\t|"<< NV.Tienluong<<"|" << endl;
+
+	f << "|" << NV.MaNV << "\t|" << NV.Holot << "\t|" << NV.Ten << "\t|" << NV.Tienluong << "|" << endl;
 }
 void DocDS(ifstream &f, int &n, NhanVien NV[])
 {
@@ -56,7 +94,7 @@ void XuatDS(int n, NhanVien NV[])
 {
 	for (int i = 0; i < n; i++)
 	{
-		XuatNhanVien(NV[i]);
+		XuatNhanVien(NV[i], dau, i + 3);
 	}
 }
 
@@ -111,7 +149,7 @@ int LuongNhoNhat(NhanVien NV[], int n)
 	for (int i = 0; i < n; i++)
 	{
 		if (NV[i].Tienluong == Min(n, NV))
-			dem ++;
+			dem++;
 	}
 	return dem;
 }
@@ -127,9 +165,9 @@ void DuyetNhanVien(NhanVien NV[], int a[], int b[], int n)
 			dem++;
 		}
 	}
-	for(int i = 0; i< n; i++)
+	for (int i = 0; i< n; i++)
 	{
-			if (NV[i].Tienluong == Min(n, NV))
+		if (NV[i].Tienluong == Min(n, NV))
 		{
 			b[dem1] = i;
 			dem1++;
@@ -150,10 +188,10 @@ void SoSanhTen(NhanVien NV[], int n)
 			}
 	}
 }
-void GhiKQVaoFile( NhanVien NV[],int a[], int b[], int &n, int &x)
+void GhiKQVaoFile(NhanVien NV[], int a[], int b[], int &n, int &x)
 {
 	ofstream f("output3.txt");
-	if (TimNhanVien(x,NV,n) !=-1)
+	if (TimNhanVien(x, NV, n) != -1)
 	{
 		Ghifile(f, NV[TimNhanVien(x, NV, n)]);
 		f << endl;
@@ -161,19 +199,19 @@ void GhiKQVaoFile( NhanVien NV[],int a[], int b[], int &n, int &x)
 	else
 	{
 		string s = "Khong tim thay nhan vien.";
-		f <<s<< endl;
+		f << s << endl;
 	}
 	f << "Danh sach ho ten nhan vien co luong lon nhat." << endl;
-	f<<"Ho va ten: "<<endl;
+	f << "Ho va ten: " << endl;
 	for (int i = 0; i < n; i++)
 	{
-		if (NV[i].Tienluong == Max(n,NV))
+		if (NV[i].Tienluong == Max(n, NV))
 		{
 			f << NV[i].Holot << " " << NV[i].Ten << endl;
 		}
 	}
 	f << "Danh sach ho ten nhan vien co luong nho nhat." << endl;
-	f<<"Ho va ten: "<<endl;
+	f << "Ho va ten: " << endl;
 	for (int i = 0; i < n; i++)
 	{
 		if (NV[i].Tienluong == Min(n, NV))
@@ -183,40 +221,35 @@ void GhiKQVaoFile( NhanVien NV[],int a[], int b[], int &n, int &x)
 	}
 	SoSanhTen(NV, n);
 	f << "Danh sach nhan vien sau khi sap xep." << endl;
-	f <<"MaNV\tHolot\tTen\tTienluong"<<endl;
-	for (int  i = 0; i < n; i++)
+	f << "STT\tMaNV\tHolot\t\tTen\tTienluong" << endl;
+	for (int i = 0; i < n; i++)
 	{
-		Ghifile(f,NV[i]);
+		f << "-------------------------------------------" << endl;
+		f << "|" << i + 1 << "\t";
+		Ghifile(f, NV[i]);
 	}
 }
-void Menu()
+void InMenu(int vitri)
 {
+	system("cls");
+	Author();
+	int i;
+	gotoXY(dau + 8, cuoi); TextColor(6);
 	cout << "Cac chuc nang cua chuong trinh." << endl;
-	cout << "1: Kiem tra so luong nhan vien trong file." << endl;
-	cout << "2: Tim kiem nhan vien theo ma nhan vien." << endl;
-	cout << "3: Danh sach ho ten nhan vien co luong cao nhat va thap nhat." << endl;
-	cout << "4: Danh sach nhan vien sap xep theo ten." << endl;
-	cout << "5: Ghi tat ca ket qua thuc hien duoc vao file." << endl;
-	cout << "6: Thoat." << endl;
+	gotoXY(dau + 12, cuoi + 1); TextColor(6);
+	printf("==========oOo==========");
+	for (i = 1; i <= MAX; i++)
+	{
+		if (i == vitri) TextColor(2);
+		else TextColor(7);
+		gotoXY(dau - 1, cuoi + 1 + i);
+		cout << submenu[i - 1];
+	}
 }
-int ChonChucNang()
-{
-	int chon;
-	cout << "Moi chon chuc nang muon thuc hien: ";
-	cin >> chon;
-	if (chon > 0 && chon < 7) return chon;
-	else return ChonChucNang();
-}
-void Author()
-{
-	cout << "Thuc tap co so tuan 1, bai 1." << endl;
-	cout << "Sinh vien thuc hien: Nguyen Tuan Anh." << endl;
-	cout << "Giang vien huong dan: Bui Thi Hong Minh." << endl;
-}
-void XuLyMenu()
+void XuLyMenu(int vitri)
 {
 	ifstream f("input3.txt");
-	int n,x;
+	int n, x;
 	f >> n;
 	NhanVien *NV = new NhanVien[n];
 	DocDS(f, n, NV);
@@ -225,84 +258,134 @@ void XuLyMenu()
 	int a[50];
 	int b[50];
 	DuyetNhanVien(NV, a, b, n);
-	int chucnang = ChonChucNang();
-	switch (chucnang)
+	char c;
+	do
+	{
+		InMenu(vitri);
+		gotoXY(80, 25);
+		c = getch();
+		switch (c)
+		{
+		case 72: vitri--; if (vitri == 0) vitri = 6; break;
+		case 80: vitri++; if (vitri == 7) vitri = 1; break;
+		case 27: exit(0);
+		}
+	} while (c != 13);
+	switch (vitri)
 	{
 	case 1:
 	{
-		cout << "-----------oOo-----------" << endl;
-		if(n <= 50)
-		cout << "So luong nhan vien trong file la: " << n << endl;
+		system("cls");
+		gotoXY(dau, 0);
+		if (n <= 50)
+			cout << "So luong nhan vien trong file la: " << n << endl;
 		else
 		{
-			cout <<"So luong nhan vien vuot qua dieu kien.vui long kiem tra lai.";
+			cout << "So luong nhan vien vuot qua dieu kien.vui long kiem tra lai.";
 			exit(1);
 		}
+		system("pause");
+		XuLyMenu(vitri);
 		break;
 	}
 	case 2:
 	{
-		
-		cout << "-----------oOo-----------" << endl;
+		system("cls");
+		gotoXY(dau, 0);
 		cout << "Nhap ma nhan vien can tim: ";
 		cin >> x;
-		if (TimNhanVien(x,NV,n)!=-1)
+		if (TimNhanVien(x, NV, n) != -1)
 		{
-			XuatNhanVien(NV[TimNhanVien(x, NV, n)]);
+			gotoXY(dau + 2, 1);
+			cout << "Ma nhan vien";
+			gotoXY(dau + 18, 1);
+			cout << "Ho lot";
+			gotoXY(dau + 34, 1);
+			cout << "Ten";
+			gotoXY(dau + 50, 1);
+			cout << "Tien luong" << endl;
+			XuatNhanVien(NV[TimNhanVien(x, NV, n)], dau + 1, 2);
 		}
-		else cout << "Khong tim thay nhan vien co ma nhan vien " << x << endl;
+		else
+		{
+			gotoXY(dau, 0);
+			cout << "Khong tim thay nhan vien co ma nhan vien " << x << endl;
+		}
+		system("pause");
+		XuLyMenu(vitri);
+		cout << endl;
 		break;
 	}
 	case 3:
 	{
-		cout << "-----------oOo-----------" << endl;
+		system("cls");
+		gotoXY(dau, 0);
 		cout << "Danh sach nhan vien co luong lon nhat la: " << endl;
-		for (int  i = 0; i < Lmax; i++)
+		for (int i = 0; i < Lmax; i++)
 		{
+			gotoXY(dau, i + 1);
 			cout << "Ho ten nhan vien: " << NV[a[i]].Holot << " " << NV[a[i]].Ten << endl;
-			
+
 		}
+		gotoXY(dau, Lmax + 2);
 		cout << "Danh sach nhan vien co luong nho nhat la: " << endl;
 		for (int i = 0; i < Lmin; i++)
 		{
-			
+			gotoXY(dau, Lmax + i + 3);
 			cout << "Ho ten nhan vien: " << NV[b[i]].Holot << " " << NV[b[i]].Ten << endl;
 		}
+		system("pause");
+		XuLyMenu(vitri);
 		break;
 	}
 	case 4:
 	{
-		cout << "-----------oOo-----------" << endl;
-		cout << "Danh sach nhan vien sau khi sap xep la: "<<endl;
-		cout <<"MaNV\tHolot\tTen\tTienluong"<<endl;
+		system("cls");
+		gotoXY(dau, 0);
+		cout << "Danh sach nhan vien sau khi sap xep la: " << endl;
+		gotoXY(dau + 1, 2);
+		cout << "Ma nhan vien";
+		gotoXY(dau + 17, 2);
+		cout << "Ho lot";
+		gotoXY(dau + 33, 2);
+		cout << "Ten";
+		gotoXY(dau + 49, 2);
+		cout << "Tien luong" << endl;
 		SoSanhTen(NV, n);
 		XuatDS(n, NV);
+		system("pause");
+		XuLyMenu(vitri);
 		break;
 	}
 	case 5:
 	{
-		cout << "-----------oOo-----------" << endl;
-		cout << "Tat ca ket qua da duoc ghi vao file output1.txt." << endl;
-		GhiKQVaoFile(NV,a,b,n,x);
+		system("cls");
+		gotoXY(dau, 0);
+		cout << "Tat ca ket qua da duoc ghi vao file output3.txt." << endl;
+		GhiKQVaoFile(NV, a, b, n, x);
+		system("pause");
+		XuLyMenu(vitri);
 		break;
 	}
 	case 6:
 	{
+		system("cls");
+		TextColor(9);
+		gotoXY(dau + 4, 0);
 		cout << "-----------oOo-----------" << endl;
+		gotoXY(dau, 1);
 		cout << "Cam on vi da su dung chuong trinh." << endl;
+		gotoXY(dau + 4, 2);
 		cout << "-----------oOo-----------" << endl;
+		TextColor(7);
 		exit(1);
+		XuLyMenu(vitri);
 		break;
 	}
 	}
 }
 int main()
 {
-	Author();
-	Menu();
-	while(1)
-	{
-		XuLyMenu();
-	}
+	XuLyMenu(1);
 	system("pause");
 }

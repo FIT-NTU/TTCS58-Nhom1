@@ -74,15 +74,15 @@ void GhiKetQuaVaoFile(string &s)
 {
 	//ghi ket qua thuc hien cac ham vao file
 	ofstream f("output1.txt");
-	f << "Chuoi sau khi xoa cac khoang trang:/" << XoaKhoangTrang(s) << "/" << endl;
-	f <<"Chuoi sau khi chuan hoa:/"<< ChuanHoaProper(s)<<"/"<<endl;
+	f << "Chuoi sau khi xoa cac khoang trang:" << XoaKhoangTrang(s)<< endl;
+	f <<"Chuoi sau khi chuan hoa:"<< ChuanHoaProper(s)<<endl;
 	f << "So ky tu: " << ThongKeKyTu(s);
 }
 void GhiChuoiNhapVaoFile(string &s)
 {
 	//ghi chuoi vua nhap vaofile
 	ofstream f("input1.txt");
-	f << "chuoi vua nhap: /" << s << "/";
+	f << "chuoi vua nhap:" << s;
 }
 void Menu()
 {
@@ -152,7 +152,6 @@ void XuLyMenu(string &s,string &temp)
 		cout<< "-----------oOo-----------" << endl;
 		cout << "Cam on vi da su dung chuong trinh." << endl;
 		cout<< "-----------oOo-----------" << endl;
-		system("pause");
 		exit(1);
 		break;
 	}

@@ -1,0 +1,21 @@
+Khong tim thay nhan vien.
+Danh sach ho ten nhan vien co luong lon nhat.
+Ho va ten: 
+Nguyen Tien An
+Dinh Thanh Long
+Danh sach ho ten nhan vien co luong nho nhat.
+Ho va ten: 
+Nguyen Tat Thanh
+Nguyen Trung Kien
+Danh sach nhan vien sau khi sap xep.
+STT	MaNV	Holot		Ten	Tienluong
+-------------------------------------------
+|1	|613	|Nguyen Tien	|An	|1700|
+-------------------------------------------
+|2	|345	|Nguyen Trung	|Kien	|1300|
+-------------------------------------------
+|3	|395	|Dinh Thanh	|Long	|1700|
+-------------------------------------------
+|4	|123	|Nguyen Tat	|Thanh	|1300|
+-------------------------------------------
+|5	|546	|Nguyen Van	|Tuan	|1650|
