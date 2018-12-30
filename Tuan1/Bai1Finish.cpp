@@ -65,7 +65,7 @@ int ThongKeKyTu(string &s)
 	//duyet tu dau den cuoi chuoi. neu khong phai khoang trang thi dem +1
 	for (int i = 0; i < s.length(); i++)
 	{
-		if (s[i] != 32)
+		if (((s[i] >=97) && (s[i] <=122)) || ((s[i]>=65)&&(s[i]<=90)))
 			dem++;
 	}
 	return dem;
