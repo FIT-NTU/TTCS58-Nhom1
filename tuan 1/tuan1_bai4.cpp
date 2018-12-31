@@ -39,14 +39,14 @@ void docfile(int &n, int &p, vector< int > &a){
 
 void backtracking( vector< int > a, int binary, int p)
 {
-    if (binary == n and !p ) // p==0 tuong duong !p
+    if (binary == n && !p ) // p==0 tuong duong !p
     {
     	//truong hop dung
         socach++;
         xuat.push_back(givegift); // them 1 phan tu vao vi tri sau cung cua vector
     }
 
-    if (binary < n and p >= 0) //chi chay tu 0 toi n-1
+    if (binary < n && p >= 0) //chi chay tu 0 toi n-1
 	{
 		//viet ra tat ca cac truong hop dung
         givegift[binary] = 1;
