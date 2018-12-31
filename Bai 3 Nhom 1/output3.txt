@@ -1,0 +1,16 @@
+ma nhan vien	ho lot		ten	tien luong
+4897		nguyen		hai		70
+487879		nguyen		a		70
+154848		tran		a		50
+---------------------------------------------------------------
+khong tim thay
+---------------------------------------------------------------
+ho ten nhan vien co so tien luong cao nhat : nguyen hai
+ho ten nhan vien co so tien luong cao nhat : nguyen a
+ho ten nhan vien co so tien luong thap nhat : tran a
+---------------------------------------------------------------
+ma nhan vien	ho lot		ten	tien luong
+487879		nguyen		a		70
+154848		tran		a		50
+4897		nguyen		hai		70
+---------------------------------------------------------------
