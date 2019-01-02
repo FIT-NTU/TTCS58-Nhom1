@@ -7,27 +7,27 @@ using namespace std;
 
 struct PNODE 
 { 
-    int row, col; 
+    int hang, cot; 
     int data; 
     PNODE *next; 
 }; 
 
 struct MAT 
 { 
-    int rows, cols; 
-    PNODE *row[max]; 
-    MAT(int _row = max, int _col = max) 
+    int hangs, cots; 
+    PNODE *hang[max]; 
+    MAT(int _hang = max, int _cot = max) 
         { 
-            rows = _row; 
-            cols = _col; 
+            hangs = _hang; 
+            cots = _cot; 
         } 
 }; 
 
-void set(PNODE *dest, int row, int col, int data) 
+void set(PNODE *dest, int hang, int cot, int data) 
 { 
     dest->data = data; 
-    dest->row = row; 
-    dest->col = col; 
+    dest->hang = hang; 
+    dest->cot = cot; 
 } 
 
 void append(PNODE * &dest, PNODE *src) 
@@ -40,10 +40,10 @@ void append(PNODE * &dest, PNODE *src)
 void input(MAT &a, char name) 
 { 
     int k, j; int _data;  
-    for (k = 0; k < a.rows; k ++) 
+    for (k = 0; k < a.hangs; k ++) 
         { 
-            PNODE *last = a.row[k] = NULL; 
-            for (j = 0; j < a.cols; j ++) 
+            PNODE *last = a.hang[k] = NULL; 
+            for (j = 0; j < a.cots; j ++) 
                 { 
                     printf("%c[%d,%d] = ",name,k,j); 
                     scanf("%d",&_data); 
@@ -52,7 +52,7 @@ void input(MAT &a, char name)
                             PNODE *temp = (PNODE *) malloc (sizeof(PNODE)); 
                             set(temp,k,j,_data); 
                             append(last,temp); 
-                            if (a.row[k] == NULL) a.row[k] = last; 
+                            if (a.hang[k] == NULL) a.hang[k] = last; 
                         } 
                 } 
         } 
@@ -65,24 +65,24 @@ PNODE * rowsum(PNODE *a, PNODE *b, int mode = 1)
     while (pa != NULL && pb != NULL) 
         { 
             PNODE *temp = (PNODE *) malloc (sizeof(PNODE)); 
-            if (pa->col < pb->col) 
+            if (pa->cot < pb->cot) 
                 { 
-                    set(temp,pa->row,pa->col,pa->data); 
+                    set(temp,pa->hang,pa->cot,pa->data); 
                     pa = pa->next; 
                 } 
             else 
-                if (pa->col > pb->col) 
+                if (pa->cot > pb->cot) 
                     { 
                         if (mode) 
-                             set(temp,pb->row,pb->col,pb->data); 
-                        else set(temp,pb->row,pb->col,-pb->data); 
+                             set(temp,pb->hang,pb->cot,pb->data); 
+                        else set(temp,pb->hang,pb->cot,-pb->data); 
                         pb = pb->next; 
                     } 
                 else 
                     { 
                         if (mode)  
-                             set(temp,pb->row,pb->col,pa->data + pb->data); 
-                        else set(temp,pb->row,pb->col,pa->data - pb->data); 
+                             set(temp,pb->hang,pb->cot,pa->data + pb->data); 
+                        else set(temp,pb->hang,pb->cot,pa->data - pb->data); 
                         pa = pa->next; 
                         pb = pb->next; 
                     } 
@@ -93,8 +93,8 @@ PNODE * rowsum(PNODE *a, PNODE *b, int mode = 1)
         { 
             PNODE *temp = (PNODE *) malloc (sizeof(PNODE)); 
             if (mode) 
-                 set(temp,pb->row,pb->col, pb->data); 
-            else set(temp,pb->row,pb->col,-pb->data); 
+                 set(temp,pb->hang,pb->cot, pb->data); 
+            else set(temp,pb->hang,pb->cot,-pb->data); 
             append(last,temp); 
             if (c == NULL) c = last; 
             pb = pb->next; 
@@ -102,7 +102,7 @@ PNODE * rowsum(PNODE *a, PNODE *b, int mode = 1)
     while (pa != NULL) 
         { 
             PNODE *temp = (PNODE *) malloc (sizeof(PNODE)); 
-            set(temp,pa->row,pa->col,pa->data); 
+            set(temp,pa->hang,pa->cot,pa->data); 
             append(last,temp); 
             if (c == NULL) c = last; 
             pa = pa->next; 
@@ -112,40 +112,40 @@ PNODE * rowsum(PNODE *a, PNODE *b, int mode = 1)
 
 void matsum(MAT a, MAT b, MAT &c, int mode=1) 
 { 
-    c.rows = a.rows; c.cols = a.cols; 
-    for (int k = 0; k < a.rows; k++) 
-        c.row[k] = rowsum(a.row[k],b.row[k], mode); 
+    c.hangs = a.hangs; c.cots = a.cots; 
+    for (int k = 0; k < a.hangs; k++) 
+        c.hang[k] = rowsum(a.hang[k],b.hang[k], mode); 
 
 } 
 
 void matmul(MAT a, MAT b, MAT &c) 
 { 
-    int k, j, *_data = new int[b.cols]; 
+    int k, j, *_data = new int[b.cots]; 
      
     PNODE *last; 
-    c.rows = a.rows; c.cols = b.cols; 
-    for (k = 0; k < a.rows; k++) 
+    c.hangs = a.hangs; c.cots = b.cots; 
+    for (k = 0; k < a.hangs; k++) 
         { 
-            for (j = 0; j < b.cols; j++) _data[j] = 0; 
-            PNODE *pa = a.row[k]; 
+            for (j = 0; j < b.cots; j++) _data[j] = 0; 
+            PNODE *pa = a.hang[k]; 
             while (pa !=NULL) 
                 { 
-                    PNODE *pb = b.row[pa->col]; 
+                    PNODE *pb = b.hang[pa->cot]; 
                     while (pb != NULL) 
                         { 
-                            _data[pb->col] += pa->data*pb->data; 
+                            _data[pb->cot] += pa->data*pb->data; 
                             pb = pb->next; 
                         } 
                     pa = pa->next; 
                 } 
-            c.row[k] = last = NULL; 
-            for (j = 0; j < b.cols; j++) 
+            c.hang[k] = last = NULL; 
+            for (j = 0; j < b.cots; j++) 
                 if (_data[j]) 
                     { 
                         PNODE *temp = (PNODE *) malloc (sizeof(PNODE)); 
                         set(temp,k,j,_data[j]); 
                         append(last,temp); 
-                        if (c.row[k] == NULL) c.row[k] = last; 
+                        if (c.hang[k] == NULL) c.hang[k] = last; 
                     } 
         } 
     delete _data; 
@@ -153,46 +153,46 @@ void matmul(MAT a, MAT b, MAT &c)
 
 int mdeterm(MAT a) 
 { 
-    if (a.rows != a.cols)  
+    if (a.hangs != a.cots)  
         { 
             printf("\nKhong phai ma tran vuong!\n"); 
             return 0; 
         } 
     float *c[max], temp; 
     int k, j, p; 
-    for (k = 0; k < a.rows; k ++) 
+    for (k = 0; k < a.hangs; k ++) 
         { 
-            c[k] = new float[a.cols]; 
-            for (j = 0; j < a.cols; j++) c[k][j] = 0; 
-            PNODE *pa = a.row[k]; 
+            c[k] = new float[a.cots]; 
+            for (j = 0; j < a.cots; j++) c[k][j] = 0; 
+            PNODE *pa = a.hang[k]; 
             while (pa != NULL) 
                 { 
-                    c[k][pa->col] = (float) pa->data; 
+                    c[k][pa->cot] = (float) pa->data; 
                     pa = pa ->next; 
                 } 
         } 
     int sign = 1; 
-    for (k = 0; k < a.rows-1; k ++) 
+    for (k = 0; k < a.hangs-1; k ++) 
         { 
             if (c[k][k] == 0) 
                 { 
                     p = k+1; 
-                    while (p < a.rows && c[p][k] == 0) p ++; 
-                    if (p == a.rows) return 0; 
+                    while (p < a.hangs && c[p][k] == 0) p ++; 
+                    if (p == a.hangs) return 0; 
                     sign = -sign; 
-                    for (j = k; j < a.rows; j++) 
+                    for (j = k; j < a.hangs; j++) 
                         { 
                             temp = c[k][j];  
                             c[k][j] = c[p][j]; 
                             c[p][j] = temp; 
                         } 
                 } 
-            for (p = k+1; p < a.rows; p ++) 
-                for (j = a.rows-1; j >= k; j--) 
+            for (p = k+1; p < a.hangs; p ++) 
+                for (j = a.hangs-1; j >= k; j--) 
                     c[p][j]= c[p][j]-c[k][j]*c[p][k]/c[k][k]; 
         } 
     temp = sign; 
-    for (k = 0; k < a.rows; k ++)  
+    for (k = 0; k < a.hangs; k ++)  
         {    temp *= c[k][k]; 
             delete c[k]; 
         } 
@@ -203,23 +203,23 @@ void output(MAT a, char *name)
 { 
     printf("\n%s:\n", name); 
     int k; PNODE *temp; 
-    for (k = 0; k < a.rows; k ++) 
+    for (k = 0; k < a.hangs; k ++) 
         { 
             printf("\n"); 
-            temp = a.row[k]; int j = 0; 
+            temp = a.hang[k]; int j = 0; 
             if (temp == NULL) 
-                for (int i = j; i < a.cols; i ++) 
+                for (int i = j; i < a.cots; i ++) 
                     printf("%8d",0); 
 
             while (temp != NULL) 
                 { 
-                    for (int i = j; i < temp->col; i ++) 
+                    for (int i = j; i < temp->cot; i ++) 
                         printf("%8d",0); 
-                    j = temp->col + 1; 
+                    j = temp->cot + 1; 
                     printf("%8d",temp->data); 
                     temp = temp->next; 
                     if (temp == NULL) 
-                        for (int i = j; i < a.cols; i ++) 
+                        for (int i = j; i < a.cots; i ++) 
                             printf("%8d",0); 
                 } 
         } 
@@ -229,14 +229,14 @@ void output(MAT a, char *name)
 void matfree(MAT &a) 
 { 
     int k; 
-    for (k = 0; k < a.rows; k++) 
+    for (k = 0; k < a.hangs; k++) 
         { 
-            PNODE *pa = a.row[k]; 
+            PNODE *pa = a.hang[k]; 
             while (pa != NULL) 
                 { 
-                    a.row[k] = pa->next; 
+                    a.hang[k] = pa->next; 
                     delete pa; 
-                    pa = a.row[k]; 
+                    pa = a.hang[k]; 
                 } 
         } 
 } 
