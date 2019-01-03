@@ -1,4 +1,0 @@
-ma nhan vien	ho lot		ten	tien luong
-4897		nguyen		hai		70
-487879		nguyen		a		70
-154848		tran		a		50
