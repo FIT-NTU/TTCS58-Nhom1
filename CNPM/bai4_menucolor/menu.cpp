@@ -214,7 +214,7 @@ void menu(int vt)
         c=getch();
         switch (c)
         {
-        	case 1: vt=1;break;
+        	
             case 72: vt--; if (vt==0) vt=6; break;
             case 80: vt++; if (vt==7) vt=1; break;
             case 27: exit(0);
