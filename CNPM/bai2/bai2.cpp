@@ -243,18 +243,22 @@ int main()
 	DuyetMatran(a,y);
 	cout<<endl;
 	
-	//nhan ma tran voi x
-//	cout<<"nhap 1 so nguyen x: ";
-//	cin>>x;
-//	Nhanso(a,x);
-//	cout<<endl;
-//	DuyetMatran(a,y);
+	
+		//tinh dinh thuc
+	dt=Dinhthuc(a);
+	if(dt==9999) cout<<"ma tran k phai ma tran vuong;";
+		else cout<<"dinh thuc: "<<dt<<endl;
+	
+//	nhan ma tran voi x
+	cout<<"nhap 1 so nguyen x: ";
+	cin>>x;
+	Nhanso(a,x);
+	cout<<endl;
+	DuyetMatran(a,y);
+	cout<<endl<<"========"<<endl;
 	
 	
-//	//tinh dinh thuc
-//	dt=Dinhthuc(a);
-//	if(dt==9999) cout<<"ma tran k phai ma tran vuong;";
-//		else cout<<"dinh thuc: "<<dt<<endl;
+
 		
 	
 	//+ - * /
@@ -264,10 +268,14 @@ int main()
 	DuyetMatran(b,z);
 	cout<<endl<<endl;
 	
-	//+ 
-//	Cong(a,b);
-//	cout<<endl<<endl;
+	//+
+	cout<<endl<<"========"<<"cong"<<endl; 
+	Cong(a,b);
+	cout<<endl<<endl;
+	cout<<endl<<"========"<<"tru"<<endl;
+	Tru(a,b);
 //	
+	cout<<endl<<"========"<<"nhan"<<endl;
 	Nhan(a,b);
 	
 	system("pause");
