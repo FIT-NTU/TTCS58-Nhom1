@@ -1,11 +1,13 @@
 #include <iostream>
 using namespace std;
 
-char a[10] = {'o','1','2','3','4','5','6','7','8','9'};
+int n, player; //bien n de lua chon menu, player de xac dinh nguoi choi 1 hay 2
+int dem=0; //dem so luot choi
+char a[10] = {'o','1','2','3','4','5','6','7','8','9'}; //mang a luu cac gia tri so tren ban co
 
 int kiemtra() //dieu kien ket thuc game:3 o lien tiep theo chieu ngang, doc, cheo
 {
-	if (a[1] == a[2] && a[2] == a[3])  	   //ngang
+	if (a[1] == a[2] && a[2] == a[3])  	   //hang ngang
 
 		return 1;
 	else if (a[4] == a[5] && a[5] == a[6])
@@ -14,7 +16,7 @@ int kiemtra() //dieu kien ket thuc game:3 o lien tiep theo chieu ngang, doc, che
 	else if (a[7] == a[8] && a[8] == a[9])
 
 		return 1;
-	else if (a[1] == a[4] && a[4] == a[7]) //doc
+	else if (a[1] == a[4] && a[4] == a[7]) //hang doc
 
 		return 1;
 	else if (a[2] == a[5] && a[5] == a[8])
@@ -23,7 +25,7 @@ int kiemtra() //dieu kien ket thuc game:3 o lien tiep theo chieu ngang, doc, che
 	else if (a[3] == a[6] && a[6] == a[9])
 
 		return 1;
-	else if (a[1] == a[5] && a[5] == a[9]) //cheo
+	else if (a[1] == a[5] && a[5] == a[9]) //hang cheo
 
 		return 1;
 	else if (a[3] == a[5] && a[5] == a[7])
@@ -36,51 +38,55 @@ int kiemtra() //dieu kien ket thuc game:3 o lien tiep theo chieu ngang, doc, che
 	else
 		return -1; //di xong 1 o thi den nguoi khac di
 }
-void inmanhinh() //ve khung
+void menu() //ham menu
 {
-	system("cls"); //ham xoa man hinh
 	cout<< "--------MENU--------"<<endl;
-
 	cout<<"1.Choi voi X"<<endl;
 	cout<<"2.Choi voi O"<<endl;
 	cout<<"3.Thoat"<<endl;
-	cout<<"Moi ban choi> "<<endl;
-
-	
+	cout<<"Moi ban chon: "<<endl;
+}
+void inmanhinh() //ve khung
+{
+	system("cls"); //xoa man hinh
 	//in ra ban co
+	cout<<endl<<endl<<endl<<endl<<endl<<endl;
+	cout <<"\t\t\t\t\t"<< "     |     |     " << endl;
+	cout <<"\t\t\t\t\t"<< "  " << a[1] << "  |  " << a[2] << "  |  " << a[3] << endl;
 
-	cout << "     |     |     " << endl;
-	cout << "  " << a[1] << "  |  " << a[2] << "  |  " << a[3] << endl;
+	cout <<"\t\t\t\t\t"<< "_____|_____|_____" << endl;
+	cout <<"\t\t\t\t\t"<< "     |     |     " << endl;
 
-	cout << "_____|_____|_____" << endl;
-	cout << "     |     |     " << endl;
+	cout <<"\t\t\t\t\t"<< "  " << a[4] << "  |  " << a[5] << "  |  " << a[6] << endl;
 
-	cout << "  " << a[4] << "  |  " << a[5] << "  |  " << a[6] << endl;
+	cout <<"\t\t\t\t\t"<< "_____|_____|_____" << endl;
+	cout <<"\t\t\t\t\t"<< "     |     |     " << endl;
+	
+	cout <<"\t\t\t\t\t"<< "  " << a[7] << "  |  " << a[8] << "  |  " << a[9] << endl;
 
-	cout << "_____|_____|_____" << endl;
-	cout << "     |     |     " << endl;
-
-	cout << "  " << a[7] << "  |  " << a[8] << "  |  " << a[9] << endl;
-
-	cout << "     |     |     " << endl << endl; 
+	cout <<"\t\t\t\t\t"<< "     |     |     " << endl << endl; 
+	cout<<"Luot choi thu:"<<dem<<endl;
 }
 
-int main() //ham chinh
+int main()
 {
-	int player = 1;
 	int i;
 	int k;  //bien lua chon
 	char mark;
+	menu();
+	cin>>n;
+	if(n==1 || n==2) //neu n=1 thi nguoi thu nhat choi, n=2 thi nguoi thu 2 choi
+		player=n;
+	else exit(n); //neu n khac 1 va khac 2 thi se ket thuc chuong trinh.
 	do
 	{
 		inmanhinh();
 		if(player%2) //neu player bang 1 thi nguoi thu nhat di
 			player=1;
-		else 
+		else
 			player=2;	
 		cout << "Nguoi choi " << player << " " << "chon so:  ";
 		cin >> k;
-
 		if (mark=(player == 1))
 			mark='X';
 		else 
@@ -121,6 +127,7 @@ int main() //ham chinh
 		}
 		i=kiemtra();
 		player++; //nguoi tiep theo se di
+		dem++;
 	}while(i==-1);  //i khac -1 se dung lai
 	inmanhinh();
 	if(i==1) //in ket qua nguoi chien thang
