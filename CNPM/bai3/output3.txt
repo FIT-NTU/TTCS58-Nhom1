@@ -1,0 +1,7 @@
+thong tin nhan vien can kiem tra:
+luong cao nhat:  luong thap nhat: danh sach sau khi sap xep:
+      maNV     Holot       Ten     Luong
+       123    nguyen         a       234
+       124      tran         a       500
+       125      tran         b       841
+       126        le         c       200
