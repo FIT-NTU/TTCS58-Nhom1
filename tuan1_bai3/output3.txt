@@ -1,0 +1,60 @@
+tim nv: 
+mnv:112
+Ho: c
+
+Ten: nguyen
+
+Luong: 8000
+======================
+Max luong 
+Ma Nhan Vien : 112
+Ten        : c
+
+Ho Lot     : nguyen
+
+Luong      : 8000
+======================
+Min Luong 
+Ma Nhan Vien : 112
+Ten        : c
+
+Ho Lot     : nguyen
+
+Luong      : 8000
+======================
+sau khi sap xep: 
+======================
+Ma Nhan Vien: 113
+Ten		   : a
+
+Ho Lot     : nguyen
+
+Luong     : 4000
+======================
+Ma Nhan Vien: 114
+Ten		   : b
+
+Ho Lot     : nguyen
+
+Luong     : 8000
+======================
+Ma Nhan Vien: 112
+Ten		   : c
+
+Ho Lot     : nguyen
+
+Luong     : 8000
+======================
+Ma Nhan Vien: 115
+Ten		   : d
+
+Ho Lot     : nguyen
+
+Luong     : 4000
+======================
+Ma Nhan Vien: 111
+Ten		   : e
+
+Ho Lot     : nguyen
+
+Luong     : 5000

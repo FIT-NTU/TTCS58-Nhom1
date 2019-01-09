@@ -1,0 +1,16 @@
+5
+111
+nguyen a
+25
+112
+nguyen b
+24
+113
+nguyen c
+15
+114
+nguyen d
+27
+115
+nguyen e
+30
