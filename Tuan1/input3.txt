@@ -1,0 +1,21 @@
+5
+123
+Nguyen Tat
+Thanh
+1300
+345
+Nguyen Trung
+Kien
+1300
+546
+Nguyen Van
+Tuan
+1650
+613
+Nguyen Tien
+An
+1700
+395
+Dinh Thanh
+Long
+1700
