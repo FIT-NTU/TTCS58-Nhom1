@@ -378,7 +378,7 @@ int thang(){
   for(int j=1 ;j<=50 ;j++){
    
    
-   //xet thagn theo cot
+   //xet thagn theo hang
    if((a[i][j]==a[i+1][j])&&(a[i][j]==a[i+2][j])&&(a[i][j]==a[i+3][j])&&(a[i+4][j]==a[i][j])&&(a[i][j]!=0)){
     Thang = 1;
 
