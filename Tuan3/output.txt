@@ -1,0 +1,29 @@
+Ma nhan vien	Ho ten			So ngay cong	Luong nhan vien
+2		Ta Thi Cuc		3		900000
+1		Le Van Tan		5		1500000
+3		Nguyen Hoang		7		2100000
+Ma nhan vien	Ho ten			So ngay cong	Luong nhan vien
+2		Ta Thi Cuc		3		900000
+1		Le Van Tan		5		1500000
+3		Nguyen Hoang		7		2100000
+5		Le Anh Kha		9		2700000
+Ma nhan vien	Ho ten			So ngay cong	Luong nhan vien
+2		Ta Thi Cuc		3		900000
+1		Le Van Tan		5		1500000
+3		Nguyen Hoang		7		2100000
+5		Le Anh Kha		9		2700000
+-----------Thong tin nhan vien------------
+STT	Ma nhan vien	Ho ten				So ngay cong	Luong nhan vien
+4	5		Le Anh Kha			9			2700000
+
+Ma nhan vien	Ho ten			So ngay cong	Luong nhan vien
+2		Ta Thi Cuc		3		900000
+1		Le Van Tan		10		3000000
+3		Nguyen Hoang		7		2100000
+5		Le Anh Kha		9		2700000
+Xoa thanh cong!
+Xoa that bai!
+Ma nhan vien	Ho ten			So ngay cong	Luong nhan vien
+2		Ta Thi Cuc		3		900000
+1		Le Van Tan		10		3000000
+5		Le Anh Kha		9		2700000

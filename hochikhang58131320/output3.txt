@@ -1,0 +1,26 @@
+Khong tim thay nhan vien co ma tren!
+Khong tim thay nhan vien co ma tren!
+Khong tim thay nhan vien co ma tren!
+Khong tim thay nhan vien co ma tren!
+-----------Thong tin nhan vien------------
+STT	Ma nhan vien	Ho		Ten	Luong nhan vien
+5	5		ho		khang		789
+Khong tim thay nhan vien co ma tren!
+Khong tim thay nhan vien co ma tren!
+Khong tim thay nhan vien co ma tren!
+Khong tim thay nhan vien co ma tren!
+Khong tim thay nhan vien co ma tren!
+-----------Nhan vien co luong cao nhat------------
+le khang
+-----------Nhan vien co luong cao nhat------------
+ho khang
+-----------Nhan vien co luong thap nhat------------
+nguyen hoang
+-----------Nhan vien co luong thap nhat------------
+ba hai
+STT	Ma nhan vien	Ho		Ten	Luong nhan vien
+1	4		ba		hai		123
+2	2		nguyen		hai		456
+3	1		nguyen		hoang		123
+4	5		ho		khang		789
+5	3		le		khang		789
