@@ -1,0 +1,22 @@
+3
+1
+1+1=?
+2
+3
+4
+5
+2
+Dai hoc Nha Trang o dau ?
+Tai Hue
+Tai Nha Trang
+Tai Da Nang
+Tai Ha Noi
+3
+tap doan Intel khong san xuat con chip cpu nao sau day
+core i3
+core i1
+core i7
+core i5
+1
+2
+2
