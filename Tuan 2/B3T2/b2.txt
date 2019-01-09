@@ -1,0 +1,23 @@
+3
+1
+5 x 9 x 6 = ?
+65
+890
+270
+320
+2
+Bac Ho sinh nam bao nhieu ?
+1901
+1890
+1790
+1889
+3
+Chip SnapDragon 625 co bao nhieu nhan ?
+12
+6
+8
+4
+3
+2
+3
+

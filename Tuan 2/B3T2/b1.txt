@@ -1,0 +1,22 @@
+3
+1
+2+2*2 = ?
+8
+6
+4
+0
+2
+trong so con chuot sau con chuot nao co 2 chan ?
+chuot dong
+chuot hamster
+chuot mickey
+chuot may tinh
+3
+bai hat nao sau day khong phai do nhac si Trinh Cong Son sang tac ?
+Diem Xua
+Cat Bui
+Nguoi Con Gai Viet Nam Da Vang
+Xuan Da Ve
+2
+3
+4
