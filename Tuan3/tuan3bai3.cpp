@@ -164,7 +164,7 @@ int Chonchucnang()
 	int chon;
 	cout << "Nhap chuc nang muon thuc hien: ";
 	cin >> chon;
-	if (chon >0 && chon < 8)
+	if (chon > 0 && chon < 9)
 		return chon;
 	else return Chonchucnang();
 }
