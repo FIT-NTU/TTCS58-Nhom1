@@ -1,0 +1,9 @@
+ Co  8  cach chon qua cho doi dat giai nhat.
+cach 1:    1   0   1   1   0   0   1
+cach 2:    1   0   1   0   0   1   1
+cach 3:    1   0   0   1   0   1   0
+cach 4:    1   0   0   0   1   0   0
+cach 5:    0   0   1   1   0   1   1
+cach 6:    0   0   1   0   1   0   1
+cach 7:    0   0   0   1   1   0   0
+cach 8:    0   0   0   0   1   1   0

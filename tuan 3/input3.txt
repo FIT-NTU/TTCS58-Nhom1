@@ -1,0 +1,12 @@
+123
+Nguyen Van Hoang
+30
+002
+Nguyen Thi Thu
+60
+003
+Dinh Thi Kim Thoa
+50
+004
+Nguyen Van Linh
+20
