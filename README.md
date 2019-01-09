@@ -1,2 +1,2 @@
 # TTCS58-Nhom1
-Thực tập cơ sở 58 - Nhóm số 1
+TTCS58 - Nhóm 1: Mỗi SV clone Project về và push bài vào nhánh có tên là MSSV của mình
