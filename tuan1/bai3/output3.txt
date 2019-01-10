@@ -1,0 +1,19 @@
+=============ket qua 1============
+================ket qua 2=============
+
+nhan vien co luong cao nhat: nguyen anh
+nhan vien co luong cao nhat: nguyen tuan
+nhan vien co luong thap nhat: le loi
+==========ket qua 3============
+ma nhan vien: 125
+ho nhan vien: nguyen
+ten nhan vien: anh
+luong nhan vien: 15
+ma nhan vien: 124
+ho nhan vien: le
+ten nhan vien: loi
+luong nhan vien: 12
+ma nhan vien: 123
+ho nhan vien: nguyen
+ten nhan vien: tuan
+luong nhan vien: 15
