@@ -1,0 +1,19 @@
+3
+1. Ai dep trai nhat lop ?
+a. Nguyen Van Linh
+b. Huynh Minh Chien
+c. Nguyen Tuan Anh
+d. Nguyen Van Hoang
+a
+2. Ai oc cho nhat lop ?
+a. Nguyen Thanh Long
+b. Ho Chi Khang
+c. Vo Tran Bao Hieu
+d. Nguyen Quoc Anh Khoa
+c
+3. Ai be de nhat lop
+a. Luu Van Non
+b. Phan Thanh Dat
+c. Le Tuan Tai
+d. Ho Ngoc Chung
+c

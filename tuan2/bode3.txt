@@ -1,0 +1,19 @@
+3
+1. Ai hay di hoc tre nhat ?
+a. Hoang Tri
+b. Nhat Thien
+c. Ngoc Chung
+d. Trieu Thuan
+a
+2. Ai da banh hay nhat lop ?
+a. Anh Khoa
+b. Tan Phat
+c. Van Sinh
+d. Nhat Thanh
+d
+3. Ai ga lang nhat lop ?
+a. Minh Chien
+b. Ngoc Son
+c. Van Linh
+d. Tuan Anh
+c

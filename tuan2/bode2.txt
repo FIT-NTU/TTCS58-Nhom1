@@ -1,0 +1,25 @@
+4
+1. Ai dep gai nhat lop ?
+a. Hoang Toni
+b. Tran Dang Kim Khue
+c. Nguyen Minh Hai
+d. Le Van Tan
+a
+2. Ai giau nhat lop ?
+a. Anh Khoa
+b. Tan Phat
+c. Van Thinh
+d. Ngoc Nhan
+a
+3. Ai lam bieng nhat lop ?
+a. Nguyen Thanh Long
+b. Huynh Minh Chien
+c. Luu Van Non
+d. Anh Khoa
+c
+4. Ai cao nhat lop ?
+a. Nguyen Van Hoang
+b. Phan Thanh Dat
+c. Le Van Tan
+d. Nguyen Tuan Anh
+a
