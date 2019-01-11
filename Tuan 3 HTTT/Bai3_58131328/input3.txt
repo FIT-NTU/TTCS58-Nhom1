@@ -1,0 +1,17 @@
+4
+1
+Tran Ngoc Tien
+30
+9000000
+2
+Le Chi Van
+24
+7200000
+3
+Nguyen Canh To
+17
+5100000
+4
+Nguyen Huu Luan
+12
+3600000

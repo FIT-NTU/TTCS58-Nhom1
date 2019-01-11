@@ -1,0 +1,31 @@
+5
+Cau 1 : Nhi phan cua so 10 he thap phan la?
+A.00001010
+B.00001011
+C.00001110
+D.00000111
+A.00001010
+Cau 2 : Nhi phan cua so 192 he thap phan la?
+A.11000000
+B.10100000
+C.01100000
+D.11100000
+A.11000000
+Cau 3 : Dia chi mang cua IP 192.168.10.212/26?
+A.192.168.10.0
+B.192.168.10.64
+C.192.168.10.128
+D.192.168.10.192
+D.192.168.10.192
+Cau 4 : DNS viet tat cua tieng anh la gi?
+A.Domain Name Server
+B.Domain Name Service
+C.Domain Name System
+D.Directory Name Service
+C.Domain Name System
+Cau 5 : DHCP viet tat cua tieng anh la gi?
+A.Dymanic Host Configuration Post
+B.Directory Host Configuration Post
+C.Dymanic Host Configuration Protocol
+D.Directory Host Configuration Protocol
+C.Dymanic Host Configuration Protocol

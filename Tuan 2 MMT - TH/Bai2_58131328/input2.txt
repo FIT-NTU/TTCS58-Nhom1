@@ -1,0 +1,17 @@
+4
+1
+Tran Ngoc Tien
+23
+6500
+2
+Le Chi Van
+22
+5000
+3
+Nguyen Canh To
+25
+7800
+4
+Le Minh
+27
+7200

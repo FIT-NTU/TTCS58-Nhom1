@@ -1,0 +1,17 @@
+4
+1
+Tran Dang Kim
+Khue
+12000
+2
+Le Chi
+Van
+7500
+3
+Tran Ngoc
+Tien
+6500
+4
+Nguyen Canh To
+Mau
+5500

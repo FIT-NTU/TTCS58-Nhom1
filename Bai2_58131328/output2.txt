@@ -1,0 +1,54 @@
+Ket qua cua ma tran thua nhan voi 1 so :
+-2 0 0 
+0 -4 0 
+0 0 -6 
+
+Ket qua cua ma tran thua nhan voi 1 so :
+-2 0 0 
+0 -4 0 
+0 0 -6 
+
+Dinh thuc cua ma tran thua la : 6
+
+Ket qua cong hai ma tran thua :
+A : 
+1 0 0 
+0 2 0 
+0 0 3 
+B : 
+1 2 3 
+0 0 0 
+0 0 0 
+Ket qua : 
+2 2 3 
+0 2 0 
+0 0 3 
+
+Ket qua tru hai ma tran thua :
+A : 
+1 0 0 
+0 2 0 
+0 0 3 
+B : 
+0 0 0 
+0 0 0 
+1 2 3 
+Ket qua : 
+1 0 0 
+0 2 0 
+-1 -2 0 
+
+Ket qua nhan hai ma tran thua :
+A : 
+1 0 0 
+0 2 0 
+0 0 3 
+B : 
+0 4 0 
+5 0 0 
+0 9 0 
+Ket qua : 
+0 4 0 
+10 0 0 
+0 27 0 
+

@@ -1,0 +1,30 @@
+5
+Cau 1 :Thi xa Cao Lanh thuoc tinh nao?
+A.Dong Thap
+B.Long An
+C.Vinh Long
+D.Tien Giang
+A.Dong Thap
+Cau 2 :Nuoc My co bao nhieu bang?
+A.52 bang
+B.53 bang
+C.51 bang
+D.54 bang
+A.52 bang
+Cau 3:6+2x(3+1) bang bao nhieu?
+A.8
+B.12
+C.14
+D.18
+C.14
+Cau 4:6+3*2+1 bang bao nhieu?
+A.12
+B.13
+C.14
+D.15
+B.13
+Cau 5:18/3 + 6*3 - 18 + 6 bang bao nhieu?
+A.15
+B.14
+C.13
+D.12

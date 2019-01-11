@@ -1,0 +1,31 @@
+5
+Cau 1 :Dai duong nao lon nhat tren the gioi?
+A.Dai tay duong
+B.Bac bang duong
+C.Thai binh duong
+D.An do duong
+C.Thai binh duong
+Cau 2 :Dai duong nao nho nhat tren the gioi?
+A.Dai tay duong
+B.Bac bang duong
+C.Thai binh duong
+D.An do duong
+B.Bac bang duong
+Cau 3 :Dia luc "Gia" la ten goi khac cua chau luc nao?
+A.Chau Phi
+B.Chau A
+C.Chau My
+D.Chau Au
+D.Chau Au
+Cau 4 :Dia luc "Den" la ten goi khac cua chau luc nao?
+A.Chau Phi
+B.Chau A
+C.Chau My
+D.Chau Au
+A.Chau Phi
+Cau 5 :Na Uy co bien gioi giap voi nuoc nao sau day?
+A.Dan Mach
+B.Phan Lan
+C.Thuy Dien
+D.Phap
+C.Thuy Dien

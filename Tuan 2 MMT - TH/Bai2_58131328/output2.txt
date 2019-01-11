@@ -1,0 +1,39 @@
+Sau khi them mot nhan vien vao danh sach : 
+---------------------------------------------
+STT|Ma nhan vien|Ho ten nhan vien|Tuoi|Luong
+ 1	1	 Tran Ngoc Tien		    23	6500
+ 2	2	 Le Chi Van		    22	5000
+ 3	5	 Nguyen Ngoc Tien		    23	5500
+ 4	3	 Nguyen Canh To		    25	7800
+ 5	4	 Le Minh		    27	7200
+---------------------------------------------
+STT|Ma nhan vien|Ho ten nhan vien|Tuoi|Luong
+Danh sach sau khi cap nhat : 
+ 1	1	 Tran Ngoc Tien		    23	6500
+ 2	2	 Le Chi Van		    22	5000
+ 3	5	 Nguyen Ngoc Duong		    25	7000
+ 4	3	 Nguyen Canh To		    25	7800
+ 5	4	 Le Minh		    27	7200
+Sau khi xoa mot nhan vien vao danh sach : 
+---------------------------------------------
+STT|Ma nhan vien|Ho ten nhan vien|Tuoi|Luong
+ 1	1	 Tran Ngoc Tien		    23	6500
+ 2	2	 Le Chi Van		    22	5000
+ 3	3	 Nguyen Canh To		    25	7800
+ 4	4	 Le Minh		    27	7200
+---------------------------------------------
+STT|Ma nhan vien|Ho ten nhan vien|Tuoi|Luong
+Ket qua sau khi tim kiem : 
+Vi tri : 01	Tran Ngoc Tien	23	6500
+---------------------------------------------
+STT|Ma nhan vien|Ho ten nhan vien|Tuoi|Luong
+Ket qua sau khi tim kiem : 
+Vi tri : 12	Le Chi Van	22	5000
+---------------------------------------------
+STT|Ma nhan vien|Ho ten nhan vien|Tuoi|Luong
+Ket qua sau khi tim kiem : 
+Vi tri : 23	Nguyen Canh To	25	7800
+---------------------------------------------
+STT|Ma nhan vien|Ho ten nhan vien|Tuoi|Luong
+Ket qua sau khi tim kiem : 
+Vi tri : 23	Nguyen Canh To	25	7800

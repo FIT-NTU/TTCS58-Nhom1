@@ -1,0 +1,23 @@
+Thong tin nhan vien da duoc tim kiem : 1
+STT	MaNV	Ho lot		Ten		Tien Luong
+1	Tran Dang Kim		Khue		12000
+Thong tin nhan vien da duoc tim kiem : 2
+STT	MaNV	Ho lot		Ten		Tien Luong
+2	Le Chi		Van		7500
+Thong tin nhan vien da duoc tim kiem : 3
+STT	MaNV	Ho lot		Ten		Tien Luong
+3	Tran Ngoc		Tien		6500
+Thong tin nhan vien da duoc tim kiem : 4
+STT	MaNV	Ho lot		Ten		Tien Luong
+4	Nguyen Canh To		Mau		5500
+Danh sach nhan vien co tien luong lon nhat va thap nhat : 
+STT	MaNV	Ho lot		Ten		Tien Luong Lon Nhat
+ 1	 1	Tran Dang Kim	Khue		12000
+STT	MaNV	Ho lot		Ten		Tien Luong Nho Nhat
+ 4	 4	Nguyen Canh To	Mau		5500
+Sau khi da sap xep : 
+STT	MaNV	Ho lot		Ten		Tien Luong
+1	Tran Dang Kim		Khue		12000
+4	Nguyen Canh To		Mau		5500
+3	Tran Ngoc		Tien		6500
+2	Le Chi		Van		7500
